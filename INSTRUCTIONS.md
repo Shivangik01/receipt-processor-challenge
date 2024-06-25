@@ -28,3 +28,10 @@ docker build -t receipt-processor .
 ```
 docker run -p 8080:8080 receipt-processor
 ```
+
+## API paths:
+
+POST => http://localhost:8080/receipts/process
+GET => http://localhost:8080/receipts/{id}/points
+
+"Server Running..." indicates port is working.

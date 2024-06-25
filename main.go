@@ -10,6 +10,7 @@ import (
     "strconv"
     "math"
     "regexp"
+    "fmt"
 )
 
 
@@ -216,5 +217,8 @@ func main() {
     router.HandleFunc("/receipts/process", processReceipt).Methods("POST")
     router.HandleFunc("/receipts/{id}/points", getPoints).Methods("GET")
 
+    fmt.Print("Server Running...")
+
     http.ListenAndServe(":8080", router)
+
 }
