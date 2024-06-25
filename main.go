@@ -30,7 +30,7 @@ type Item struct {
 var (
     retailerPattern = regexp.MustCompile(`^[\w\s\-&]+$`)
     datePattern     = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`) // YYYY-MM-DD
-    timePattern     = regexp.MustCompile(`^\d{2}:\d{2}$`) // HH:MM, 24-hour format
+    timePattern     = regexp.MustCompile(`^(2[0-3]|[01]?[0-9]):([0-5][0-9])$`)// HH:MM, 24-hour format
     moneyPattern    = regexp.MustCompile(`^\d+\.\d{2}$`) // 2 decimals in prices and total
     itemDescPattern = regexp.MustCompile(`^[\w\s\-]+$`)
 )
@@ -48,7 +48,8 @@ func validateReceipt(receipt *Receipt) bool {
     }
 
     // validate purchaseDate
-    if !datePattern.MatchString(receipt.PurchaseDate) {
+     _, err := time.Parse("2006-01-02", receipt.PurchaseDate)
+    if  err != nil{
         return false
     }
 
