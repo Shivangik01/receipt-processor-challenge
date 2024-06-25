@@ -26,5 +26,5 @@ docker build -t receipt-processor .
 2. Run the Docker container:
 
 ```
-docker run -p 8080:8080 my-receipt-app
+docker run -p 8080:8080 receipt-processor
 ```
