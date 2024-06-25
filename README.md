@@ -1,4 +1,4 @@
-### REFER TO INSTRUCTIONS.MD
+## Refer to INSTRUCTIONS.md
 
 # Receipt Processor
 
