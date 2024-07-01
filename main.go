@@ -160,7 +160,7 @@ func isTimeBetweenTwoAndFour(purchaseTime string) int {
     time, err := time.Parse("15:04", purchaseTime)
 
     if err == nil {
-        if hour := time.Hour(); hour >= 14 && hour < 16 {
+        if hour := time.Hour(); hour > 14 && hour < 16 {
             points += 10
         }
     }
